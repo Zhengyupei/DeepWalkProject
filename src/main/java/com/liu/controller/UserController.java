@@ -28,6 +28,6 @@ public class UserController {
         for (User user : list){
             logger.info("{}, {}", user.getName(), user.getPassword());
         }
-        return "/index";
+        return "/main/index";
     }
 }
