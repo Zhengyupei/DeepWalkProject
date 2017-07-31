@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.liu.mapper.VideoMapper">
+
+    <resultMap id="baseMap" type="com.liu.model.Video">
+        <id column="id" property="id"/>
+        <result column="video_name" property="videoName"/>
+        <result column="image_name" property="imageName"/>
+        <result column="url" property="url"/>
+    </resultMap>
+
+    <select id="selectVideos" resultMap="baseMap">
+        select id,video_name,image_name,url
+        from video
+    </select>
+    
+    <insert id="insertVideo" parameterType="com.liu.model.Video">
+        insert into video(video_name,image_name,url)
+        values(#{videoName},#{imageName},#{url})
+    </insert>
+
+</mapper>

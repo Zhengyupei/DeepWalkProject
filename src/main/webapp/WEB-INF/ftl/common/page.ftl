@@ -30,6 +30,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/inputdemo.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+
+
     <script src="/static/js/jQuery-2.1.4.min.js" type="text/javascript"></script>
     <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="/static/js/app.min.js" type="text/javascript"></script>
@@ -39,6 +41,47 @@
 <#-- sweetAlert 展示栏 -->
     <script src="/static/js/config.js"></script>
     <script src="/static/js/classie.js"></script>
+    <style>
+        .a-upload {
+            padding: 4px 10px;
+            height: 20px;
+            line-height: 20px;
+            position: relative;
+            cursor: pointer;
+            color: #888;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1
+        }
+
+        .a-upload  input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer
+        }
+
+        .a-upload:hover {
+            color: #444;
+            background: #eee;
+            border-color: #ccc;
+            text-decoration: none
+        }
+        .picture{
+            width:150px;
+            height:150px;
+        }
+        td,th{
+            text-align:center;
+        }
+    </style>
 </head>
 <body class="skin-blue sidebar-mini">
 
@@ -70,23 +113,23 @@
             <ul class="sidebar-menu">
                 <li class="header">功能导航</li>
                 <li>
-                    <a href="/app/list/trunk-env">
-                        <i class="fa fa-cubes"></i> <span>trunk环境App配置</span>
+                    <a href="/user/list">
+                        <i class="fa fa-cubes"></i> <span>首页视频</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/ds/list/trunk-env">
-                        <i class="fa fa-cubes"></i> <span>trunk环境DS配置</span>
+                    <a href="">
+                        <i class="fa fa-cubes"></i> <span>视频分析</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/app/list/test-env">
-                        <i class="fa fa-connectdevelop"></i> <span>test环境App配置</span>
+                    <a href="">
+                        <i class="fa fa-connectdevelop"></i> <span>图片分析</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/app/list/release-env">
-                        <i class="fa fa-connectdevelop"></i> <span>release环境App配置</span>
+                    <a href="">
+                        <i class="fa fa-connectdevelop"></i> <span>训练集视频</span>
                     </a>
                 </li>
             </ul>
