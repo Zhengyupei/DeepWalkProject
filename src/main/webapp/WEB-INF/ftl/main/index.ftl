@@ -1,67 +1,75 @@
-<@page title="配置中心" description="配置中心"  keywords="配置中心" assets=[
-]>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="box box-primary">
-            <div class="box-header">
-                <h3 class="box-title">首页</h3>
-            </div>
-            <!-- /.box-header -->
-            <#if message?? >
-                ${message}
-            </#if>
-            <div class="box-body table-responsive no-padding">
-                <form role="form" id="fm1" onsubmit="return handleAction()" style="width:80%;margin-left:50px;height:490px;" enctype="multipart/form-data"
-                    action="/file/upload" method="post">
-                    <div class="form-group" style="margin-bottom:30px;margin-left:50px;width:300px;">
-                        <label for="inputfile"><h3>视频文件输入</h3></label><br/>
-                        <div href="javascript:;" class="a-upload" style="height:30px;" >
-                            <input type="file" name="fileUpload" id="fileUpload" style="width:300px;height:20px;">点击这里上传文件
-                        </div>
-                    </div>
-                    <input type="text" id="msg" class="form-control" value="" disabled="disabled" style="text-align:center;"/>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DeepWalk手语翻译</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-                    <button type="submit"  class="btn btn-default" >提交</button>
-                </form>
-            </div>
 
-            <!-- /.box-body -->
+</head>
+<style type="text/css">
+    #top{width: 100%;  height: 60px;}
+    #mainBody{background-image: url(sky.gif);width: 100%;  position: absolute;  top: 60px;  bottom: 0px;  left: 0px;}
+    a:hover{color: red}
+    #videoPlace{opacity: 0.8}
+
+
+</style>
+<body>
+<nav class="navbar navbar-inverse" id="top" role="navigation" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="color: #00a7d0">DeepWalk手语翻译</a>
         </div>
-        <!-- /.box -->
+        <div>
+            <form class="navbar-form navbar-left">
+                <div class="form-group" style="position: absolute;top: 0px">
+                    <button type="button" class="btn btn-default navbar-btn">上传视频</button>
+                    <input type="text" class="form-control" placeholder="选择文件">
+                    <input type="file" style="position: absolute;left: 5px;top: 12px;height: 25px;opacity: 0">
+                </div>
+            </form>
+            <button type="button" class="btn btn-default navbar-btn" style="position: absolute;left: 500px;top: 0px">播放视频</button>
+        </div>
+        <div>
+            <form class="navbar-form navbar-right">
+                <div>
+                    <a style="color: #00a7d0">----关爱聋人，让世界充满爱</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+<div id="mainBody">
+    <div id="middle" style=" position: absolute;top: 0px;left: 110px;right: 110px;bottom: 50px;background-color: transparent;border-radius: 5px;opacity: 1" >
+        <div id="videoPlace" class="col-lg-8" style="background-color: whitesmoke;height: 100%;border: medium;">
+            <video id="media" height="95%" width="96%" src="" controls style="background-color: #2f3238;position: absolute;top:10px;left:10px">
+
+            </video>
+        </div>
+        <!--end of videoPlace div -->
+        <div id="translationPlace" class="col-lg-4" style="background-color: black;height: 100%;border: medium">
+            <div id="translationPlaceTop">
+                <font color="blue" size="3" style="color: #00a7d0">翻译结果：</font>
+            </div>
+            <!--end of translationPlaceTop div -->
+            <div id="translationPlaceMiddle">
+                <textarea readonly="readonly" rows="15" cols="10" style="background-image: url(pure.jpg) ;opacity:0.8;width:100%;height: 480px;overflow-y: visible">这里是翻译的内容</textarea>
+
+            </div>
+            <!--end of translationPlaceMiddle -->
+            <div id="translationPlacebottom" style="position: absolute;bottom: 20px;right: 0px;height: 20px;background-color: transparent">
+                <button style="background: transparent;border: 0"><a>[下载翻译结果]</a></button>
+                <button style="background: transparent;border: 0"><a>[清空]</a></button>
+                <button style="background: transparent;border: 0"><a>[详情]</a></button>
+                <button style="background: transparent;border: 0"><a>[训练集]</a></button>
+            </div>
+            <!--end of translationPlacebottom div -->
+        </div>
+        <!--end of translationPlace div -->
     </div>
 </div>
-<script type="text/javascript">
-    var verify = false;
-    var maxSize = 30 * 1024 * 1024;
-    var tipMsg = "您的浏览器暂不支持计算上传文件的大小，确保上传文件不要超过30M";
-    $(document).ready(function(){
-
-    })
-    $("#fileUpload").change(function(){
-        var file = $(this).val();
-        var fileTail = file.substring(file.indexOf(".") + 1);
-        switch (fileTail){
-            case "avi": verify = true; break;
-            case "mp4": verify = true; break;
-            case "pdf": verify = true; break;
-            default:break;
-        }
-        $("#msg").val(file.substring(file.lastIndexOf("\\") + 1));
-    })
-    function handleAction(){
-        var fileSize = document.getElementById("fileUpload").files[0].size;
-
-        if (fileSize == -1 || fileSize >= maxSize){
-            alert(tipMsg);
-            return false;
-        }
-        if (verify == true){
-            return true;
-        } else {
-            alert("视频为空或格式不对!");
-            return false;
-        }
-    }
-</script>
-<#--<script type="text/javascript" src="/static/js/main/index.js></script>-->
-</@page>
+</body>
+</html>
