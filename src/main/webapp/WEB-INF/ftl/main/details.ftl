@@ -59,5 +59,21 @@
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    for (Span span : Spans){
+
+    }
+    var count = 6;
+    var random = random() + xxxxx;
+    var template = "<div style='float'><img src='" + {{span.src}} + "'></div><div></div>"
+    var da_prefix = '<div style="height:' + random + '">';
+
+    var da_suffix = "</div>";
+    document.ready(function(){
+        for (var i = 0 ; i < 6 ; i++){
+            document.getElementById().innerHTML()
+        }
+    })
+</script>
 </body>
 </html>
