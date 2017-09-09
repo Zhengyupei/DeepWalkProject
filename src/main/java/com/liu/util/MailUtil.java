@@ -36,20 +36,20 @@ public class MailUtil {
         }
     }
 
-    /*public static void main(String[] args){
-        String to = "15652957391@163.com";
+    public static void main(String[] args){
+        String to = "1459963090@qq.com";
 
-        String from = "18800105727@163.com";
+        String from = "m18800105727@163.com";
 
         Properties prop = System.getProperties();
         prop.put("mail.host","smtp.163.com" );
-            prop.put("mail.transport.protocol", "smtp");
+        prop.put("mail.transport.protocol", "smtp");
         prop.put("mail.smtp.auth", true);
 
         Session session = Session.getInstance(prop);
         try {
             Transport ts=session.getTransport();
-            ts.connect("18800105727@163.com", "20124206999smtp");
+            ts.connect("m18800105727@163.com", "20124206999smtp");
             MimeMessage mm=new MimeMessage(session);
             mm.setFrom(new InternetAddress(from));
             mm.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
@@ -63,6 +63,6 @@ public class MailUtil {
         } catch (MessagingException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
 }

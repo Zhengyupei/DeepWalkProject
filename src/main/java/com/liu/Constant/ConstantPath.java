@@ -17,7 +17,7 @@ public class ConstantPath {
 
     public static final int NUM = 10;
 
-    public static final String MAIL_NAME = "18800105727@163.com";
+    public static final String MAIL_NAME = "m18800105727@163.com";
 
     public static final String MAIL_PWD = "20124206999smtp";
 

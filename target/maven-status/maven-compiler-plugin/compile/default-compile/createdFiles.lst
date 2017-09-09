@@ -1,6 +1,0 @@
-com/liu/mapper/PeopleMapper.class
-com/liu/service/impl/PeopleServiceImpl.class
-com/liu/controller/LoginController.class
-com/liu/service/IPeopleService.class
-com/liu/model/People.class
-com/liu/controller/MailController.class

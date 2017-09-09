@@ -35,7 +35,6 @@ public class ImageController {
         }
 
         Video video = videoService.selectVideoById(vid);
-
         model.addAttribute("images", images);
         model.addAttribute("video", video);
         return "";
