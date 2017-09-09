@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.liu.mapper.PeopleMapper">
+
+    <resultMap id="baseMap" type="com.liu.model.People">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="password" property="password"/>
+        <result column="mail" property="mail"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+    <select id="selectPeople" resultMap="baseMap">
+        select id,name,password,mail,status
+        from people
+    </select>
+
+    <select id="selectPeopleByName" resultMap="baseMap">
+        select id,name,password,mail,status
+        from people
+        where name=#{name}
+    </select>
+
+    <select id="selectPeopleByMail" resultMap="baseMap">
+        select id,name,password,mail,status
+        from people
+        where mail=#{mail}
+    </select>
+
+    <insert id="insertPeople" parameterType="com.liu.model.People" useGeneratedKeys="true" keyProperty="id">
+          insert into people(name,password,mail,status)
+          values(#{name},#{password},#{mail},#{status})
+    </insert>
+
+</mapper>

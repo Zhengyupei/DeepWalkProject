@@ -1,7 +1,6 @@
-com\liu\Constant\ConstantPath.class
-com\liu\model\Video.class
-com\liu\service\IVideoService.class
-com\liu\mapper\VideoMapper.class
-com\liu\service\impl\VideoServiceImpl.class
-com\liu\controller\VideoController.class
-com\liu\util\FrameGrabberKit.class
+com/liu/mapper/PeopleMapper.class
+com/liu/service/impl/PeopleServiceImpl.class
+com/liu/controller/LoginController.class
+com/liu/service/IPeopleService.class
+com/liu/model/People.class
+com/liu/controller/MailController.class

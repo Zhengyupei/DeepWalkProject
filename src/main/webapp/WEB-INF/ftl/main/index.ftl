@@ -11,7 +11,7 @@
 </head>
 <style type="text/css">
     #top{width: 100%;  height: 60px;}
-    #mainBody{background-image:url(oilbackground.jpg) ;background-repeat:no-repeat;background-size: 100%;width: 100%;  position: absolute;  top: 60px;  bottom: 0px;  left: 0px;}
+    #mainBody{background-image:url(static/image/oilbackground.jpg) ;background-repeat:no-repeat;background-size: 100%;width: 100%;  position: absolute;  top: 60px;  bottom: 0px;  left: 0px;}
     a:hover{color: #319F81}
     #videoPlace{opacity: 0.8}
 
@@ -73,7 +73,7 @@
 <!--下面这个div定义弹出模态框 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-image: url(oilbackg.jpg)">
+        <div class="modal-content" style="background-image: url(static/image/oilbackg.jpg)">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;

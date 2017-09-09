@@ -22,7 +22,7 @@
     }
     #top{width: 100%;  height: 60px;}
     #trainSetMainBody{
-        background-image: url(wall.jpg) ;
+        background-image: url(static/image/wall.jpg) ;
         background-repeat:no-repeat;
         background-size: 100%;
         width: 100%;
@@ -34,7 +34,7 @@
     }
     .tvframe{
         width: 200px;
-        background-image: url(elecPanel.jpg);
+        background-image: url(static/image/elecPanel.jpg);
         background-size: 100%;
         position:absolute;
         border-style: double;
@@ -107,7 +107,7 @@
 </script>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-image: url(oilbackg.jpg)">
+        <div class="modal-content" style="background-image: url(static/image/oilbackg.jpg)">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;

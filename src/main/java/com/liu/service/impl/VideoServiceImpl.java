@@ -26,4 +26,14 @@ public class VideoServiceImpl implements IVideoService {
     public void insertVideo(Video video){
         videoMapper.insertVideo(video);
     }
+
+    @Override
+    public List<Video> selectVideosByPid(int pid){
+        return videoMapper.selectVideosByPid(pid);
+    }
+
+    @Override
+    public Video selectVideoById(int id){
+        return videoMapper.selectVideoById(id);
+    }
 }

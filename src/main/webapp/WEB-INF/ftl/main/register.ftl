@@ -11,7 +11,7 @@
 <style type="text/css">
     #top{width: 100%;  height: 60px;}
     #mainBody{
-        background-image: url(oilbackg.jpg) ;
+        background-image: url(static/image/oilbackg.jpg) ;
         background-repeat:no-repeat;
         background-size: 100%;
         width: 100%;
@@ -41,20 +41,21 @@
 </nav>
 <div id="mainBody">
     <div id="registerForm" style="text-align: center;position: absolute;left: 30%;top:10%;border-style: double">
-        <form class="form-horizontal" role="form" style="opacity: 0.8;width: 550px;height:400px">
+        <form class="form-horizontal" role="form" style="opacity: 0.8;width: 550px;height:400px" action="/register" method="post">
             <div><h2>我的账户</h2></div>
             <div>
-                <label for="userName" class="col-sm-2 control-label">用户名</label>
+                <label for="username" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="userName"
+                    <input type="text" class="form-control" id="username" name="username"
                            placeholder="请输入用户名">
+                    <input type="hidden" id="checkName" value="0"/>
                 </div>
             </div><br><br><br>
 
             <div>
-                <label for="passwrd" class="col-sm-2 control-label">密码</label>
+                <label for="password" class="col-sm-2 control-label">密码</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="passwrd"
+                    <input type="password" class="form-control" id="password" name="password"
                            placeholder="请输入密码">
                 </div>
             </div><br><br><br>
@@ -66,15 +67,15 @@
                 </div>
             </div><br><br><br>
             <div>
-                <label for="email" class="col-sm-2 control-label">邮箱</label>
+                <label for="mail" class="col-sm-2 control-label">邮箱</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="email"
+                    <input type="text" class="form-control" id="mail" name="mail"
                            placeholder="请输入邮箱">
                 </div>
             </div>
             <div style="position: absolute;right: 20px;bottom:40px">
                 <button type="button" class="btn btn-default " style="width: 180px;height: 40px">取消</button>
-                <button type="button" class="btn btn-primary " style="width: 180px;height: 40px">确认并提交</button>
+                <button type="submit" class="btn btn-primary " style="width: 180px;height: 40px">确认并提交</button>
             </div>
         </form>
     </div>
@@ -82,7 +83,7 @@
 <!--下面这个div定义弹出模态框 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-image: url(oilbackg.jpg)">
+        <div class="modal-content" style="background-image: url(static/image/oilbackg.jpg)">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;
@@ -91,8 +92,8 @@
                     登录账户
                 </h4>
             </div>
-            <div class="modal-body"><input type="text" class="form-control" id="emailNum" placeholder="邮箱"></div>
-            <div class="modal-body"><input type="password" class="form-control" id="password" placeholder="密码"></div>
+            <div class="modal-body"><input type="text" class="form-control" id="emailNum" name="emailNum" placeholder="邮箱"></div>
+            <div class="modal-body"><input type="password" class="form-control" id="emailPassword" name="emailPassword" placeholder="密码"></div>
             <div class="modal-body"><button type="button" class="btn btn-primary btn-lg btn-block">登录</button></div>
             <div class="modal-footer">
                 <button style="background: transparent;border: 0"><a>忘记密码</a></button>

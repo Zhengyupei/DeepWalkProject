@@ -3,7 +3,7 @@ package com.liu.model;
 /**
  * Created by liujiayu on 2017/9/9.
  */
-public class Video {
+public class Image {
 
     private int id;
 
@@ -13,7 +13,7 @@ public class Video {
 
     private int status;
 
-    private int pid;
+    private int vid;
 
     public int getId() {
         return id;
@@ -47,11 +47,11 @@ public class Video {
         this.status = status;
     }
 
-    public int getPid() {
-        return pid;
+    public int getVid() {
+        return vid;
     }
 
-    public void setPid(int pid) {
-        this.pid = pid;
+    public void setVid(int vid) {
+        this.vid = vid;
     }
 }

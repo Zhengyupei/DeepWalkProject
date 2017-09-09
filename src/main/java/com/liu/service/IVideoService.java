@@ -9,7 +9,11 @@ import java.util.List;
  */
 public interface IVideoService {
 
-    public List<Video> selectVideos();
+    List<Video> selectVideos();
 
-    public void insertVideo(Video video);
+    void insertVideo(Video video);
+
+    List<Video> selectVideosByPid(int pid);
+
+    Video selectVideoById(int id);
 }

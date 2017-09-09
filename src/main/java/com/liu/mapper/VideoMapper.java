@@ -11,7 +11,11 @@ import java.util.List;
 @Component
 public interface VideoMapper {
 
-    public List<Video> selectVideos();
+    List<Video> selectVideos();
 
-    public void insertVideo(Video video);
+    void insertVideo(Video video);
+
+    List<Video> selectVideosByPid(int pid);
+
+    Video selectVideoById(int id);
 }

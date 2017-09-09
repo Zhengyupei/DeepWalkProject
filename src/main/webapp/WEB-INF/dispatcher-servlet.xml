@@ -9,8 +9,12 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.liu.configure"/>
+
     <!-- 扫描controller -->
-    <context:component-scan base-package="com.liu.controller"/>
+    <context:component-scan base-package="com.liu"/>
 
     <!-- mvc 自动加载驱动 -->
     <mvc:annotation-driven>
@@ -44,5 +48,6 @@
         <property name="exposeSpringMacroHelpers" value="false"/>
         <property name="requestContextAttribute" value="request"/>
     </bean>
+
 
 </beans>

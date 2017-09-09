@@ -5,19 +5,32 @@
 
     <resultMap id="baseMap" type="com.liu.model.Video">
         <id column="id" property="id"/>
-        <result column="video_name" property="videoName"/>
-        <result column="image_name" property="imageName"/>
+        <result column="name" property="name"/>
         <result column="url" property="url"/>
+        <result column="status" property="status"/>
+        <result column="pid" property="pid"/>
     </resultMap>
 
     <select id="selectVideos" resultMap="baseMap">
-        select id,video_name,image_name,url
+        select id,name,url,status,pid
         from video
     </select>
-    
-    <insert id="insertVideo" parameterType="com.liu.model.Video">
-        insert into video(video_name,image_name,url)
-        values(#{videoName},#{imageName},#{url})
+
+    <select id="selectVideosByPid" resultMap="baseMap">
+        select id,name,url,status,pid
+        from video
+        where pid=#{pid}
+    </select>
+
+    <select id="selectVideoById" resultMap="baseMap">
+        select id,name,url,status,pid
+        from video
+        where id=#{id}
+    </select>
+
+    <insert id="insertVideo" parameterType="com.liu.model.Video" useGeneratedKeys="true" keyProperty="id">
+        insert into video
+        values(#{name},#{url},#{status},#{pid})
     </insert>
 
 </mapper>
